@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cooperdar | Live radar</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+</head>
+<body>
+	<main class="radar-app">
+		<header class="radar-header"><div class="brand"><span class="brand-mark">C</span><span>COOPER<span class="brand-accent">DAR</span></span></div><div class="header-readout"><span>Current Frame: <b id="frame-time">--:--</b></span><span>Latest Scan: <b id="scan-time">CONNECTING</b></span><span>Tower: <b>KFWS</b></span><span>Zoom: <b id="zoom-level">7.50</b></span></div><div class="header-location">Current Region: <b>North Texas</b><span class="live-status">● LIVE</span></div></header>
+		<section class="radar-view" aria-label="Live weather radar map">
+			<div id="map" class="map"></div><img id="spc-overlay" class="spc-overlay" src="https://www.spc.noaa.gov/products/outlook/day1otlk.png" alt="SPC Day 1 convective outlook">
+			<div class="warning-box"><div class="warning-title">FLASH FLOOD WARNING</div><div class="warning-row"><b>SOURCE:</b> RADAR</div><div class="warning-row"><b>AREAS:</b> NORTH TEXAS</div><div class="warning-row"><b>EXPIRES:</b> <span id="warning-expiry">CHECKING NWS</span></div></div>
+			<div class="radar-controls"><button id="locate-button" type="button">⌖ <span>LOCATE</span></button><button id="zoom-in" type="button">＋</button><button id="zoom-out" type="button">−</button><button id="refresh-button" type="button">↻ <span>REFRESH</span></button></div>
+		</section>
+		<footer class="radar-footer"><div class="footer-group"><button id="play-button" class="play-button" type="button" aria-label="Play radar animation">▶</button><span class="footer-label">RADAR</span><input id="timeline" type="range" min="0" max="8" value="8"><span id="timeline-time" class="mono">NOW</span></div><div class="footer-group outlook-group"><button id="spc-button" class="footer-tab active" type="button">SPC OUTLOOKS</button><button id="alerts-button" class="footer-tab" type="button">NWS ALERTS <span id="alert-count" class="count">--</span></button><span class="outlook-day">DAY 1</span></div><div class="footer-group footer-right"><span class="live-dot"></span><span id="updated-label">UPDATING...</span><button type="button">⚙</button></div></footer>
+	</main>
+	<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+	<script src="js/map.js"></script>
+</body>
+</html>
