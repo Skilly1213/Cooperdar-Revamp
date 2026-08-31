@@ -12,7 +12,7 @@
 </head>
 <body>
 	<main class="radar-app">
-		<header class="radar-header"><div class="brand"><span class="brand-mark">C</span><span>COOPER<span class="brand-accent">DAR</span></span></div><div class="header-readout"><span>Current Frame: <b id="frame-time">--:--</b></span><span>Latest Scan: <b id="scan-time">CONNECTING</b></span><span>Tower: <b>KFWS</b></span><span>Zoom: <b id="zoom-level">7.50</b></span></div><div class="header-location">Current Region: <b>North Texas</b><span class="live-status">● LIVE</span></div></header>
+		<header class="radar-header"><div class="brand"><span class="brand-mark">C</span><span>COOPER<span class="brand-accent">DAR</span></span></div><div class="header-readout"><span>Current Frame: <b id="frame-time">--:--</b></span><span>Latest Scan: <b id="scan-time">CONNECTING</b></span><span>Tower: <b id="tower-site">KFWS</b></span><span class="site-picker"><select id="radar-site-select" aria-label="Choose MRMS radar site"></select></span><span>Zoom: <b id="zoom-level">7.50</b></span></div><div class="header-location">Current Region: <b id="current-region-label">North Texas</b><span id="site-status" class="live-status">PYART · KFWS</span></div></header>
 		<section class="radar-view" aria-label="Live weather radar map">
 			<div id="map" class="map"></div><img id="spc-overlay" class="spc-overlay" src="https://www.spc.noaa.gov/products/outlook/day1otlk.png" alt="SPC Day 1 convective outlook">
 			<div id="alert-info" class="warning-box alert-info"><button id="close-alert" class="close-alert" type="button" aria-label="Close alert information">×</button><div id="warning-title" class="warning-title">LOADING NWS ALERTS</div><div class="warning-row"><b>SOURCE:</b> NWS</div><div class="warning-row"><b>EVENT:</b> <span id="warning-event">CHECKING NWS</span></div><div class="warning-row"><b>AREAS:</b> <span id="warning-areas">CHECKING NWS</span></div><div class="warning-row"><b>EXPIRES:</b> <span id="warning-expiry">CHECKING NWS</span></div></div>
@@ -21,6 +21,7 @@
 		<footer class="radar-footer"><div class="footer-group"><button id="play-button" class="play-button" type="button" aria-label="Play radar animation">▶</button><span class="footer-label">RADAR</span><input id="timeline" type="range" min="0" max="8" value="8"><span id="timeline-time" class="mono">NOW</span></div><div class="footer-group outlook-group"><button id="spc-button" class="footer-tab active" type="button">SPC OUTLOOKS</button><button id="alerts-button" class="footer-tab" type="button">NWS ALERTS <span id="alert-count" class="count">--</span></button><span class="outlook-day">DAY 1</span></div><div class="footer-group footer-right"><span class="live-dot"></span><span id="updated-label">UPDATING...</span><button id="start-scene-tour-button" class="tour-launcher" type="button" aria-label="Cycle alerts" title="Cycle alerts">?</button><button type="button">⚙</button></div></footer>
 	</main>
 	<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+	<script src="js/mrms.js"></script>
 	<script src="js/map.js"></script>
 	<script src="js/tour.js?v=warning-tour"></script>
 </body>
